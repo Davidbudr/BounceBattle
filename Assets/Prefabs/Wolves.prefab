@@ -19,9 +19,10 @@ GameObject:
   - component: {fileID: 3906770946712154872}
   - component: {fileID: 8992371322829324894}
   - component: {fileID: 3998653686937068186}
+  - component: {fileID: -4063332493948451182}
   m_Layer: 0
   m_Name: Wolves
-  m_TagString: Untagged
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82eaebcb54cc90d44b6675daa26bc7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
+  uicanvas: {fileID: 0}
   uiPrefab: {fileID: 1265864092724964514, guid: fc039a13dfab11448b127bfd3546f2a4,
     type: 3}
   StatsUI: {fileID: 0}
@@ -295,3 +296,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25f104d24a34b94a9fe14492e00c1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &-4063332493948451182
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269931264985072141}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

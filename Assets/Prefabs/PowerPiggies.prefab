@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1120280323120102837}
   m_Layer: 0
   m_Name: PowerPiggies
-  m_TagString: Untagged
+  m_TagString: Piggy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

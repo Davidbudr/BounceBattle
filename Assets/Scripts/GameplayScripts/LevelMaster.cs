@@ -56,6 +56,11 @@ public class LevelMaster : MonoBehaviour
             if (gate == false)
             {
                 gate = true;
+                foreach (GameObject wolf in Wolves)
+                {
+                    wolf.SendMessage("Turnoffui");
+                    wolf.SetActive(false);
+                }
                 LosePanel.SetActive(true);
                 mScript.Playlose();
             }

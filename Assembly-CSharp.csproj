@@ -63,17 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\CharacterVariables.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\DestroyParticle.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\LevelMaster.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\PlayerCollisions.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\PowerPiggyScript.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\SoundEffectScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\PigScripts\PigScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\PigScripts\PowerPiggyScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\PlayerScripts\PlayerCollisions.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\PlayerScripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\SharedScripts\CharacterVariables.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\SharedScripts\SoundEffectScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\SharedScripts\StatsUIScript.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\SpawnerScript.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\StatsUIScript.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\WolfCollisions.cs" />
-    <Compile Include="Assets\Scripts\GameplayScripts\WolfScript.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\WolfScripts\WolfCollisions.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\WolfScripts\WolfScript.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\SceneChangeScript.cs" />
     <Compile Include="Assets\Scripts\MusicScript.cs" />
     <Reference Include="Unity.Timeline.Editor">

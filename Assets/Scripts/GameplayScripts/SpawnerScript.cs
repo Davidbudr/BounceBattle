@@ -14,6 +14,9 @@ public class SpawnerScript : MonoBehaviour
 
     public LevelMaster Master;
 
+    private List<GameObject> PigList = new List<GameObject>();
+    private List<GameObject> WolfList = new List<GameObject>();
+
     void Start()
     {
         int Pigs = Random.Range(minMaxPigs[0], minMaxPigs[1]+1);
@@ -21,20 +24,41 @@ public class SpawnerScript : MonoBehaviour
 
         for (var i = 0; i < Pigs; i++)
         {
+            Vector3 _myposition = ReturnEmptyPosition();
+            
+
             GameObject pig = Instantiate(PigPrefab);
-            pig.transform.position = new Vector3(Random.Range(-SpawnRadius, SpawnRadius), 2, Random.Range(-SpawnRadius, SpawnRadius));
+            pig.transform.SetParent(this.transform);
+            pig.transform.position = _myposition;
+            PigList.Add(pig);
         }
         for (var j = 0; j < Wolves; j++)
         {
+            Vector3 _myposition = ReturnEmptyPosition();
+
             GameObject wolf = Instantiate(WolfPrefab);
-            wolf.transform.position = new Vector3(Random.Range(-SpawnRadius, SpawnRadius), 2, Random.Range(-SpawnRadius, SpawnRadius));
-            Master.Wolves.Add(wolf);
+            wolf.transform.SetParent(this.transform);
+            wolf.transform.position = _myposition;
+            wolf.GetComponent<WolfScript>().Piggies = PigList;
+            WolfList.Add(wolf);
         }
+        Master.Wolves = WolfList;
+
 
     }
-    
-    void Update()
+    Vector3 ReturnEmptyPosition()
     {
-        
+        while (true)
+        {
+            Vector3 _mpos = new Vector3(Random.Range(-SpawnRadius, SpawnRadius), 2, Random.Range(-SpawnRadius, SpawnRadius));
+            if (Physics.CheckSphere(_mpos, 1f))
+            {
+                continue;
+            }
+            else
+            {
+                return _mpos;
+            }
+        }
     }
 }
