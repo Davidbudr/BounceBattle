@@ -20,7 +20,11 @@ public class WolfCollisions : MonoBehaviour
 
     public void Gethit(int _hitfor)
     {
-        mystats.curHealth -= _hitfor;
+        if (_hitfor > 0)
+        {
+            mystats.curHealth -= _hitfor;
+            statsui.DamagedUI(_hitfor);
+        }
     }
     
     private void OnCollisionEnter(Collision other)
@@ -46,7 +50,7 @@ public class WolfCollisions : MonoBehaviour
                 mystats.curHealth = mystats.maxHealth;
                 sfxScript.CatchPig();
 
-                statsui.Updateui();
+                statsui.Poweredui();
             }
         }
     }

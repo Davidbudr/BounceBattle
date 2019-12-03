@@ -249,6 +249,13 @@ MonoBehaviour:
   uiPrefab: {fileID: 1265864092724964514, guid: fc039a13dfab11448b127bfd3546f2a4,
     type: 3}
   StatsUI: {fileID: 0}
+  HealthAddPrefab: {fileID: 280236555465255413, guid: 6566ae0ce9d51fd4da74fe8b8ce62292,
+    type: 3}
+  EnergyAddPrefab: {fileID: 1092616350199254988, guid: f8d477c5a4698b44c94871f495b08b06,
+    type: 3}
+  DamageColour: {r: 0.24313726, g: 0.21960784, b: 0.2784314, a: 1}
+  DamagedPrefab: {fileID: 5862741257092184471, guid: 0bbe260ecf0cc134e9d463561d9a5460,
+    type: 3}
 --- !u!114 &3906770946712154872
 MonoBehaviour:
   m_ObjectHideFlags: 0

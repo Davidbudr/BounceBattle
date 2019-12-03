@@ -16,6 +16,15 @@ public class StatsUIScript : MonoBehaviour
     private Slider StaminaBar;
     private Text LevelupText;
 
+    public GameObject HealthAddPrefab;
+    public GameObject EnergyAddPrefab;
+    
+    private Image damageImg;
+
+    public Color DamageColour;
+
+    public GameObject DamagedPrefab;
+
     void Start()
     {
         uicanvas = GameObject.Find("Canvas");
@@ -25,8 +34,9 @@ public class StatsUIScript : MonoBehaviour
         mystats = this.GetComponent<CharacterVariables>();
         Healthbar = StatsUI.transform.GetChild(0).GetComponent<Slider>();
         StaminaBar = StatsUI.transform.GetChild(1).GetComponent<Slider>();
-        LevelupText = StatsUI.transform.GetChild(2).GetComponent<Text>();
-        LevelupText.color = Color.clear;
+
+        damageImg = StatsUI.transform.GetChild(2).GetComponent<Image>();
+        damageImg.color = Color.clear;
     }
 
     // Update is called once per frame
@@ -35,10 +45,10 @@ public class StatsUIScript : MonoBehaviour
         StatsUI.transform.position = Camera.main.WorldToScreenPoint(this.transform.position);
         Healthbar.value = mystats.curHealth / mystats.maxHealth;
         StaminaBar.value = mystats.curStamina / mystats.maxStamina;
-
-        if (LevelupText.color != Color.clear)
+        
+        if (damageImg.color != Color.clear)
         {
-            LevelupText.color = Color.Lerp(LevelupText.color, Color.clear, 0.05f);
+            damageImg.color = Color.Lerp(damageImg.color, Color.clear, 0.05f);
         }
 
     }
@@ -48,9 +58,23 @@ public class StatsUIScript : MonoBehaviour
         StatsUI.SetActive(false);
     }
 
-    public void Updateui()
+    public void DamagedUI(int dmg)
     {
-        LevelupText.color = new Color32(255,0,0,255);
+        damageImg.color = Color.white;
+        GameObject hitui = Instantiate(DamagedPrefab);
+        hitui.GetComponent<TextMesh>().text = "-" + dmg;
+        hitui.GetComponent<TextMesh>().color = DamageColour;
+        hitui.transform.position = this.transform.position;
+    }
+
+    public void Poweredui()
+    {
+        //LevelupText.color = new Color32(255,0,0,255);
+        GameObject hpadd = Instantiate(EnergyAddPrefab);
+        hpadd.transform.position = this.transform.position + (Vector3.right * 0.35f);
+
+        GameObject enadd = Instantiate(HealthAddPrefab);
+        enadd.transform.position = this.transform.position + (Vector3.left * 0.35f);
     }
 
 }
