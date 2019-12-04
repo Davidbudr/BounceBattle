@@ -11,6 +11,7 @@ public class LevelMaster : MonoBehaviour
 
     public GameObject WinPanel;
     public GameObject LosePanel;
+    public GameObject GameCanvas;
 
     private bool gate = false;
 
@@ -50,6 +51,7 @@ public class LevelMaster : MonoBehaviour
                 mScript.PlayWin();
                 Player.SendMessage("Turnoffui");
                 Player.SetActive(false);
+                GameCanvas.SetActive(false);
             }
         }
         if (Player == null)
@@ -64,6 +66,7 @@ public class LevelMaster : MonoBehaviour
                 }
                 LosePanel.SetActive(true);
                 mScript.Playlose();
+                GameCanvas.SetActive(false);
             }
         }
     }
