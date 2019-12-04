@@ -25,7 +25,7 @@ public class PowerPiggyScript : MonoBehaviour
         rb = this.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 _tpos = this.transform.position;
 

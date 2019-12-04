@@ -8,6 +8,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using UnityEditor.SceneManagement;
 
 [InitializeOnLoad]
 public static class SimpleEditorUtils

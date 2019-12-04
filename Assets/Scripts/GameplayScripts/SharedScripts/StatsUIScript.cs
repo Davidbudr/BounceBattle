@@ -16,14 +16,11 @@ public class StatsUIScript : MonoBehaviour
     private Slider StaminaBar;
     private Text LevelupText;
 
-    public GameObject HealthAddPrefab;
-    public GameObject EnergyAddPrefab;
-    
+    public Color CharacterColour;
+
     private Image damageImg;
-
-    public Color DamageColour;
-
     public GameObject DamagedPrefab;
+    
 
     void Start()
     {
@@ -37,6 +34,9 @@ public class StatsUIScript : MonoBehaviour
 
         damageImg = StatsUI.transform.GetChild(2).GetComponent<Image>();
         damageImg.color = Color.clear;
+
+        LevelupText = StatsUI.transform.GetChild(3).GetComponent<Text>();
+        LevelupText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,18 +63,22 @@ public class StatsUIScript : MonoBehaviour
         damageImg.color = Color.white;
         GameObject hitui = Instantiate(DamagedPrefab);
         hitui.GetComponent<TextMesh>().text = "-" + dmg;
-        hitui.GetComponent<TextMesh>().color = DamageColour;
+        hitui.GetComponent<TextMesh>().color = CharacterColour;
         hitui.transform.position = this.transform.position;
     }
 
     public void Poweredui()
     {
-        //LevelupText.color = new Color32(255,0,0,255);
-        GameObject hpadd = Instantiate(EnergyAddPrefab);
-        hpadd.transform.position = this.transform.position + (Vector3.right * 0.35f);
+        LevelupText.gameObject.SetActive(true);
+        StartCoroutine(LevelupDisabler());
+        LevelupText.color = CharacterColour;
 
-        GameObject enadd = Instantiate(HealthAddPrefab);
-        enadd.transform.position = this.transform.position + (Vector3.left * 0.35f);
+    }
+
+    IEnumerator LevelupDisabler()
+    {
+        yield return new WaitForSeconds(1f);
+        LevelupText.gameObject.SetActive(false);
     }
 
 }

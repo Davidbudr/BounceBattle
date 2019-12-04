@@ -25,6 +25,7 @@ public class LevelMaster : MonoBehaviour
 
         //dont need to check every frame for win state
         InvokeRepeating("EndScenario",5f,1f);
+
     }
     private void EndScenario()
     {

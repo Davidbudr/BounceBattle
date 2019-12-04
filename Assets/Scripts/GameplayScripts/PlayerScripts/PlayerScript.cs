@@ -32,17 +32,21 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-
-        ArrowUI.transform.position = this.transform.position + (Vector3.up * 0.3f);
-
-        if (Input.GetMouseButtonDown(0))
+        //Pause the game otherwise
+        //used timescale instead of changing this to fixedupdate as there is a strange issue with defining the force otherwise.
+        if (Time.timeScale != 0) 
         {
-            ShooterInput(Input.mousePosition);
-        }
+            ArrowUI.transform.position = this.transform.position + (Vector3.up * 0.3f);
 
-        if (Input.touchCount > 0)
-        {
-            ShooterInput(Input.GetTouch(0).position);
+            if (Input.GetMouseButtonDown(0))
+            {
+                ShooterInput(Input.mousePosition);
+            }
+
+            if (Input.touchCount > 0)
+            {
+                ShooterInput(Input.GetTouch(0).position);
+            }
         }
 
 
@@ -101,8 +105,7 @@ public class PlayerScript : MonoBehaviour
         Vector3 _pos = Camera.main.WorldToScreenPoint(this.transform.position);
         _pos.z = 0;
         Force = Vector2.Distance(_pos, _mp) / ((Input.touchCount > 0) ? 30 : 15);
-        Force = (mystats.curStamina >= 5) ? Mathf.Clamp(Force, 0, 5) : Mathf.Clamp(Force, 0, mystats.curStamina);
-
+        Force =  Mathf.Clamp(Force, 0, (mystats.curStamina >= 5) ? 5 : mystats.curStamina);
         SlingSlide.value = Force;
 
         //set the position and rotation of the power bar and the Pointer arrow

@@ -11,6 +11,21 @@ public class SoundEffectScript : MonoBehaviour
     public AudioClip BounceClip;
     public AudioClip EnemyClip;
 
+    private SoundManagerScript soundMan;
+
+    private void Start()
+    {
+        soundMan = GameObject.FindGameObjectWithTag("Jukebox").GetComponent<SoundManagerScript>();
+    }
+
+    public void Update()
+    {
+        if(aSource.mute != soundMan.mute)
+        {
+            aSource.mute = soundMan.mute;
+        }   
+    }
+
     public void CatchPig()
     {
         aSource.clip = PigCatchClip;

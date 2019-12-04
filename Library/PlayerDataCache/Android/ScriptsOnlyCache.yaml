@@ -4,8 +4,10 @@ ScriptsOnlyBuild:
     - CharacterVariables
     - DestroyParticle
     - DontDestroy
+    - FallingUIScript
     - LevelMaster
     - MusicScript
+    - PauseScript
     - PlayerCollisions
     - PlayerScript
     - PowerPiggyScript
@@ -67,52 +69,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
+    - Class: 102
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9662}
+      Script: {instanceID: 9664}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9732}
+      Script: {instanceID: 9734}
     - Class: 114
-      Script: {instanceID: 9834}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 9922}
+      Script: {instanceID: 9924}
     - Class: 114
-      Script: {instanceID: 9932}
+      Script: {instanceID: 9934}
     - Class: 114
-      Script: {instanceID: 10026}
+      Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10150}
+      Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10260}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10322}
+      Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10608}
+      Script: {instanceID: 10328}
     - Class: 114
-      Script: {instanceID: 10774}
+      Script: {instanceID: 10616}
     - Class: 114
-      Script: {instanceID: 10898}
+      Script: {instanceID: 10782}
     - Class: 114
-      Script: {instanceID: 11000}
+      Script: {instanceID: 10906}
     - Class: 114
-      Script: {instanceID: 11072}
+      Script: {instanceID: 11008}
     - Class: 114
-      Script: {instanceID: 11144}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11152}
     - Class: 114
-      Script: {instanceID: 11296}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11430}
+      Script: {instanceID: 11304}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11438}
+    - Class: 114
+      Script: {instanceID: 11470}
+    - Class: 114
+      Script: {instanceID: 27740}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -163,23 +171,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9678}
     - Class: 114
-      Script: {instanceID: 9834}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 9874}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 10026}
+      Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10260}
+      Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10608}
+      Script: {instanceID: 10616}
     - Class: 114
-      Script: {instanceID: 11072}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11340}
     - Class: 114
-      Script: {instanceID: 11430}
+      Script: {instanceID: 11438}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -309,6 +317,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DestroyParticle
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FallingUIScript
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -539,7 +553,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 05177e8fbe2b14404cb1dab06ac6b6a6
+      Hash: e921ef64a74e0e820e64656153307914
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StatsUIScript
@@ -695,12 +709,18 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: e1d05b08ac4976a1456a42d601276a7f
+      Hash: 526b57ba4e808a12c6ad7353c0ed8dbd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PigScript
+    className: PauseScript
+  - hash:
+      serializedVersion: 2
+      Hash: b877957b53167cd7b225874bd34e4233
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManagerScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/TitleScene.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/[Documents]/Unity Exports/BounceBattle/android 0.5/BounceBattle.apk
+  playerPath: D:/[Documents]/Unity Exports/BounceBattle/android/BounceBattle0.7.apk
